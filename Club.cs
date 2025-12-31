@@ -11,7 +11,7 @@ namespace GolfBagManagerAPI
         public string Brand { get; set; }
         public int Distance { get; set; }
 
-        protected Club() { } // Required by Entity Framework
+        protected Club() { } 
 
         protected Club(string type, string brand, int distance)
         {
@@ -78,3 +78,4 @@ namespace GolfBagManagerAPI
             : base(type, brand, distance) { }
     }
 }
+
