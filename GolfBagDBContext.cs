@@ -12,8 +12,6 @@ namespace GolfBagManagerAPI
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configure Table-per-Hierarchy inheritance
-            // All club types stored in one table with a discriminator column
             modelBuilder.Entity<Club>()
                 .HasDiscriminator<string>("ClubType")
                 .HasValue<Driver>("Driver")
@@ -24,4 +22,5 @@ namespace GolfBagManagerAPI
                 .HasValue<GenericClub>("Generic");
         }
     }
+
 }
