@@ -21,7 +21,7 @@ namespace GolfBagManagerAPI.Controllers
             return Ok(_golfBag.GetAllClubs());
         }
 
-        [HttpGet("count")]
+        [HttpGet("Count")]
         public ActionResult<object> GetClubCount()
         {
             var count = _golfBag.GetClubCount();
@@ -33,7 +33,7 @@ namespace GolfBagManagerAPI.Controllers
             });
         }
 
-        [HttpPost]
+        [HttpPost("Club")]
         public ActionResult<Club> AddClub([FromBody] AddClubRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.Type) || string.IsNullOrWhiteSpace(request.Brand))
@@ -103,5 +103,6 @@ namespace GolfBagManagerAPI.Controllers
         int? Number = null,
         string? WedgeType = null);
 }
+
 
 
